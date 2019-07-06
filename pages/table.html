@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Table Page</title>
+    <meta name="author" content="Tyler Biggert">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+</head>
+<style>
+body {
+    background-color:lightskyblue;
+    box-sizing: border-box;
+}
+header {
+    border-bottom-style: dotted;
+}
+h1 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 5em;
+    color:#ff9737;
+    text-align: center;
+    font-style: italic;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+}
+
+
+/*nav bar styling start*/
+.navigation-bar {
+    text-align: center;
+    overflow: hidden;
+    padding: 5px;
+}
+.navigation-bar a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 30px;
+    color: black;
+}
+nav>a:hover {
+    background-color:#ff9737;
+    border: 1px solid black;
+}
+/*nav bar styling end*/
+
+
+
+
+/* Table styling start */
+.exam-grades {
+    border-style: outset;
+    border-width: 10px;
+    padding-bottom: 10px;
+    border-spacing: 5px;
+}
+caption {
+    text-align: left;
+}
+th {
+    border-style: solid;
+    border-width: 1px;
+    padding: 20px;
+}
+td {
+    border-style: solid;
+    border-width: 1px;
+    padding: 20px;
+}
+/* Table styling end */
+
+
+
+.wrapper {
+    width: 100%;
+    display: flex;
+}
+table {
+    float: left;
+    white-space: nowrap;
+    margin-right: 50px; 
+}
+.text-section {
+    float: left;
+    padding: 10px 10px 10px 50px;
+    border-left-style: dotted;
+}
+
+
+</style>
+<body>
+    <header class="header">
+        <h1 id="top-page-name">Tyler Biggert</h1>
+            <nav class="navigation-bar">
+                <a href="/index.html">HOME</a>
+                <a href="/pages/old-index.html">1st Page</a>
+                <a href="/pages/old-favorite-food.html">Food</a>
+                <a href="/pages/old-links.html">Links</a>
+                <a title="Atlas Login" href="https://ptl5-cas-prod.valenciacollege.edu:8443/cas-web/login?service=https%3A%2F%2Fptl5pd-prod.valenciacollege.edu%2Fc%2Fportal%2Flogin" target="_blank">Atlas</a>
+                <a title="Canvas Login" href="https://online.valenciacollege.edu/?login_success=1" target="_blank">Canvas</a>
+                <a title="Send me an emil" href="mailto:tbiggert@student.valencia.com" target="_blank">eMail</a>  
+                <a href="#">Table</a>
+            </nav>
+    <br>
+    </header> 
+<div class="wrapper">    
+<table class="exam-grades" summary="This table shows the four exam grades for several students in the class.">
+    <caption>
+        <h2>Tyler Biggert: TABLE EXAMPLE</h2>
+    </caption>
+    <colgroup>
+        <col>
+        <col span="4">
+    </colgroup>
+    <thead>
+        <tr >
+            <th>NAME</th>
+            <th>EXAM 1</th>
+            <th>EXAM 2</th>
+            <th>EXAM 3</th>
+            <th>EXAM 4</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Tyler</td>
+            <td>91</td>
+            <td>92</td>
+            <td>93</td>
+            <td>94</td>
+        </tr>
+        <tr>
+            <td>Jessica</td>
+            <td>81</td>
+            <td>82</td>
+            <td>83</td>
+            <td>84</td>
+        </tr>
+        <tr>
+            <td>Cedric</td>
+            <td>71</td>
+            <td>72</td>
+            <td>73</td>
+            <td>74</td>
+        </tr>
+    </tbody>
+</table>
+    <div class="text-section">
+        <h2>Table Project</h2>
+        <p>Here are some changes I made to build and style this table. In the future I will try to document my learning process as I develop these pages.</p>
+        <ul>
+            <li>Title of the table is a <u>caption</u>.</li>
+            <li>Border style on the outside is <u>outset</u>.</li>
+            <li><u>Cell Padding</u> and <u>spacing</u> values were entered.</li>
+            <li>Columns are grouped so they can be styled easier in the future.</li>
+            <li>Flex box was fun to play aroudn with.</li>
+            <li>Need to be careful copying CSS.</li>
+            <li>Need to be careful using tags as selectors for CSS.</li>
+            <li>Work on my development environment (including spell check add-on).</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

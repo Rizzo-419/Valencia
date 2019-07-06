@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Table Page</title>
+    <meta name="author" content="Tyler Biggert">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+</head>
+<style>
+
+
+body {
+    background-color:lightskyblue;
+    box-sizing: border-box;
+}
+h1 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 5em;
+    color:#ff9737;
+    text-align: center;
+    font-style: italic;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+}
+h2 {
+	text-align: center;
+	text-decoration: none;
+}
+fieldset {
+	line-height: 2em;
+}
+fieldset, textarea {
+	border: 1px solid gray;/*should do CSS reset in future*/
+	padding: 10px;
+}
+p {
+	text-indent: 15px; /*need to make my own external style sheet*/
+	line-height: 1.25em;
+}
+
+
+
+.navigation-bar {
+    text-align: center;
+    overflow: hidden;
+    padding: 5px;
+}
+.navigation-bar a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 30px;
+    color: black;
+}
+nav>a:hover {
+    background-color:#ff9737;
+    border: 1px solid black;
+}
+
+
+
+.wrapper { /*had to set a width property to get wrapper to size properly*/
+	min-width: 870px;
+	border-top-style: dotted;
+	text-align: center;/*centers both divs because they are inline-blocks*/
+}
+#left-section {
+	width: 450px; /*need to learn sizing better*/
+	text-align: left;
+	border: 1px solid gray;
+    display: inline-block;
+	padding: 10px;
+	margin: 20px 10px 10px 10px;
+	background: white;
+	box-shadow: 10px 10px rgba( 0,0,0,.2); /*overflow: hidden; in parent element was preventing bottom shadows from displaying*/
+}
+textarea {
+	resize: vertical;
+}
+#right-section {
+	width: 40%;
+    display: inline-block;
+	position: relative;
+	top: -100px;
+    padding: 5px;
+	margin: 5px 0 0 0;
+}
+#right-section > h2 { /*this is garbage and needs to be fixed*/
+	margin:0 0 0 5px;
+	background: white;
+	width: 450px;
+	display: inline-block;
+	border-right: 1px solid gray;
+	border-top: 1px solid gray;
+	border-left: 1px solid gray;
+	box-shadow: 10px 10px rgba( 0,0,0,.2);
+	padding-top: 15px;
+	}
+#seating-chart {
+	width: 450px;
+	margin: 0 0 0 5px;
+	border-right: 1px solid gray;
+	border-bottom: 1px solid gray;
+	border-left: 1px solid gray;
+	box-shadow: 10px 10px rgba( 0,0,0,.2);
+}
+#submit-button {
+	margin-top: 5px;
+}
+
+
+
+</style>
+<body>
+	<header class="header">
+		<h1 id="top-page-name">Tyler Biggert</h1>
+			<nav class="navigation-bar">
+				<a href="/index.html">HOME</a>
+				<a href="/pages/old-index.html">1st Page</a>
+				<a href="/pages/old-favorite-food.html">Food</a>
+				<a href="/pages/old-links.html">Links</a>
+				<a title="Atlas Login" href="https://ptl5-cas-prod.valenciacollege.edu:8443/cas-web/login?service=https%3A%2F%2Fptl5pd-prod.valenciacollege.edu%2Fc%2Fportal%2Flogin" target="_blank">Atlas</a>
+				<a title="Canvas Login" href="https://online.valenciacollege.edu/?login_success=1" target="_blank">Canvas</a>
+				<a title="Send me an emil" href="mailto:tbiggert@student.valencia.com" target="_blank">eMail</a>  
+				<a href="/pages/table.html">Table</a>
+				<a href="#">Form</a>
+			</nav>
+	<br>
+	</header> 
+<div class="wrapper">
+	<div id="left-section">
+		<h2>2019 <abbr title="World Health Organization">WHO</abbr> Conference Registration</h2>
+		<p>Registration is now open for the 2019 World Health Organization <abbr title="World Health Organization">(WHO)</abbr> global warming conference held at Hard Rock in Orlando, FL on 09/12/2019. This is a 21 and over event that will feature a free cocktail reception, luxurious buffet, party favors, and open bar. Please make sure to upload a copy of your license as proof of age.</p>
+		<form id="event-registration" action="form-storage.php" method="POST"><!--POST due to sensitive data-->
+		<fieldset>
+			<legend>Registration</legend>
+			Full Name: <input type="text" name="firstname" placeholder="First" required="required"> <input type="text" name="lastname" placeholder="Last" required="required"><!--learn to hide placeholder on focus-->
+			<br>
+			Gender:<input type="radio" name="gender" value="male">Male<input type="radio" name="gender" value="female">Female<input type="radio" name="gender" value="other">Other
+			<br>
+			Seat Section (<a href="/images/seating-chart.png">chart to the right</a>):<input type="checkbox" name="color" value="Red">Red<input type="checkbox" name="color value="White">White<input type="checkbox" name="color value="blue">Blue
+			<br>
+			Favorite Sport (party favor bag):
+				<select>
+					<option name="sport" value="">Select</option>
+					<option name="sport" value="Baseball">Baseball</option>
+					<option name="sport" value="Bowling">Bowling</option>
+					<option name="sport" value="Cycling">Cycling</option>
+					<option name="sport" value="Fishing">Fishing</option>
+					<option name="sport" value="Football">Football</option>
+					<option name="sport" value="Golf">Golf</option>
+					<option name="sport" value="NASCAR">NASCAR</option>
+					<option name="sport" value="Sailing">Sailing</option>
+					<option name="sport" value="Swimming">Swimming</option>
+					<option name="sport" value="Tennis">Tennis</option>
+				</select>
+			<br>
+			Create Username: <input type="text" name="username" maxlength="10">
+			<br>
+			Create Password: <input type="password" name="new-password" maxlength="10">
+			<br>
+			License Photo:<input type="file" name="file-name">
+			<br>
+		</fieldset>	
+		</form>
+			<br>
+			<textarea form="event-registration" rows="20" cols="50" placeholder="Additional comments entered here may appear on stage during gloabl warming presentations."></textarea> <!--Doesn't have to be a child element of form. References the form instead-->
+			<br>
+			<input id="submit-button" type="submit" form="event-registration" name="submit-button" value="Submit"> <!--form doesn't submit due to no .php code I think-->
+	</div>
+	<div id="right-section">
+		<h2>Seating Chart</h2>
+		<img id="seating-chart" src="seating-chart.png">
+	</div>
+	<div style="clear: both;"></div> <!--CSS tricks has a good write up to learn more about clearing floats-->
+</div>
+</body>
+</html>
