@@ -6,72 +6,6 @@
     <link rel="stylesheet" type="text/css" href="../styling/style-sheet.css">
     <meta name="author" content="Tyler Biggert">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-<script type="text/javascript">
-
-/*
--------------------------------------
-INSTRUCTIONS
--------------------------------------
--delete external file, move to webpage
--Ask user to input two numbers, x and y
--Numbers will be different?
--Display sum of x and y is z
--Display product of x and y is z
--Display statement x is bigger than y, or y is bigger than x
-
-
---------------------------------------
-THOUGHTS BEFORE STARTING/RESEARCHING
---------------------------------------
--stucture page as a form
--two <input> tags for user to input a number
-    convert the text to a number
--<button> for user to submit
--find out what pseduo class to use ::onClick or ::onSubmit JavaScript will check to see if the numbers are equal
--::onClick or ::onSubmit JavaScript will add, multiply, and compare
--boolean type for the compare
-    x > y return text, otherwise return other text
--three sections to display results
-    <div> sections maybe?
--learn how to place where results are returned
-    probably inserting name of function?
-
-*/
-function addXY()
-{
-    var x = parseInt(document.getElementById("valueX").value);
-    var y = parseInt(document.getElementById("valueY").value);
-    var z = document.getElementById("sum");
-    z.value = x + y;
-}
-function multiplyXY()
-{
-    var x = parseInt(document.getElementById("valueX").value);
-    var y = parseInt(document.getElementById("valueY").value);
-    var z = document.getElementById("product");
-    z.value = x * y;
-}
-function compareXY()
-{
-    var x = parseInt(document.getElementById("valueX").value);
-    var y = parseInt(document.getElementById("valueY").value);
-    if (x > y) {
-        comparison.value = "x is larger than y";
-    } else {
-        comparison.value = "y is larger than x";
-    }
-
-
-}
-
-
-</script>
-
-
-
 </head>
 <style>
 body {
@@ -95,9 +29,6 @@ body {
 .header {
     color: #DE1D35;
     font-size: 4em;
-}
-#external-code {
-    padding-left: 40px;
 }
 .form {
     padding: 10px;
@@ -133,27 +64,129 @@ body {
         <div class="content-holder">
             <h2 class="header">JavaScript</h2>
             <form class="form first-try">
-                X Value<input class="input-number" type="number" id="valueX" name="valueX">
+                X Value: <input class="input-number" type="number" id="x">
                 <br>
-                Y Value<input class="input-number" type="number" id="valueY" name="valueY">
+                Y Value: <input class="input-number" type="number" id="y">
                 <br>
-                <input type="button" name="submit" value="add numbers" onclick="addXY()">
-                <input type="button" name="submit" value="multiply numbers" onclick="multiplyXY()">
-                <input type="button" name="submit" value="which is larger" onclick="compareXY()">
+                <input type="button" value="Add" onclick="add()"><!--OnClick psuedo runs function. Type="button" prevents page submission-->
+                <input type="button" value="Multiply" onclick="multiply()">
+                <input type="button" value="Compare" onclick="compare()">
                 <br>
-                Sum (x + y) <input type="text" id="sum" name="sum">
+                Sum (x + y) <input type="text" id="sum">
                 <br>
-                Product (x * y) <input type="text" id="product" name="product">
+                Product (x * y) <input type="text" id="product">
                 <br>
-                Comparison (x &gt or &lt y) <input type="text" id="comparison" name="comparison">
+                Comparison (x &gt or &lt y) <input type="text" id="comparison">
             </form>
             <hr>
             <div class="form second-try">
                 <form>
-                   
+                    X<sub>2</sub> Value: <input type="text" id="x2">
+                    <br>
+                    Y<sub>2</sub> Value: <input type="text" id="y2">
+                    <br>
+                    <button type="button" onclick="sum2()">Add</button>
+                    <button type="button" onclick="product2()">Multiply</button>
+                    <button type="button" onclick="compare2()">Compare</button>
+                    <p id="sum2Answer"></p>
+                    <p id="product2Answer"></p>
+                    <p id="comparison2Answer"></p>
                 </form>
             </div>
         </div>
     </div> 
+<!--
+-------------------------------------
+INSTRUCTIONS
+-------------------------------------
+-delete external file, move to webpage
+-Ask user to input two numbers, x and y
+-Numbers will be different?
+-Display sum of x and y is z
+-Display product of x and y is z
+-Display statement x is bigger than y, or y is bigger than x
+
+
+--------------------------------------
+THOUGHTS BEFORE STARTING/RESEARCHING
+--------------------------------------
+-stucture page as a form
+-two <input> tags for user to input a number
+    convert the text to a number
+-<button> for user to submit
+-use a pseduo class like ::onClick to start the script
+-JavaScript will check to see if the numbers are equal, is so then ALERT
+-JavaScript will add, multiply, and compare
+-if x > y return text, otherwise return other text
+-three sections to display results
+    <div> sections maybe?
+-learn how to place where results are returned
+    probably inserting name of function somehow
+
+
+--------------------------------------------
+THOUGHTS AFTER COPLETING LESSON
+--------------------------------------------
+
+-->
+
+<script>
+    function add()
+    {
+        var x = parseInt(document.getElementById("x").value);
+        var y = parseInt(document.getElementById("y").value);
+        var z = document.getElementById("sum");
+        z.value = x + y;
+    }
+    function multiply()
+    {
+        var x = parseInt(document.getElementById("x").value);
+        var y = parseInt(document.getElementById("y").value);
+        var z = document.getElementById("product");
+        z.value = x * y;
+    }
+    function compare()
+    {
+        var x = parseInt(document.getElementById("x").value);
+        var y = parseInt(document.getElementById("y").value);
+        
+        if (x > y) {
+            comparison.value = "x is BIGGER than y";
+        } else {
+            comparison.value = "y is BIGGER than x";
+        }
+    }
+    function sum2(x2,y2)
+    {
+        var x2 = document.getElementById("x2").value;
+        var y2 = document.getElementById("y2").value;
+        var sum2Answer = parseFloat(x2) + parseFloat(y2);
+        if(!isNaN(sum2Answer))
+        {
+            document.getElementById("sum2Answer").innerHTML = "The Sum is " + sum2Answer;
+        }
+    }
+    function product2(x2,y2)
+    {
+        var x2 = document.getElementById("x2").value;
+        var y2 = document.getElementById("y2").value;
+        var product2Answer = parseFloat(x2) * parseFloat(y2);
+        if(!isNaN(product2Answer))
+        {
+            document.getElementById("product2Answer").innerHTML = "The Product is " + product2Answer;
+        }
+    }
+    function compare2(x2,y2)
+    {
+        var x2 = document.getElementById("x2").value;
+        var y2 = document.getElementById("y2").value;
+        var comparison2Answer = 0;
+        if (x2 > y2) {
+            document.getElementById("comparison2Answer").innerHTML = "x is BIGGER than y";
+        } else {
+            document.getElementById("comparison2Answer").innerHTML = "y is BIGGER than x";
+        }
+    }
+</script>
 </body>
 </html>
