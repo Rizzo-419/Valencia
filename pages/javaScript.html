@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Coming+Soon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../styling/style-sheet.css">
+    <meta name="author" content="Tyler Biggert">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<script type="text/javascript">
+
+/*
+-------------------------------------
+INSTRUCTIONS
+-------------------------------------
+-delete external file, move to webpage
+-Ask user to input two numbers, x and y
+-Numbers will be different?
+-Display sum of x and y is z
+-Display product of x and y is z
+-Display statement x is bigger than y, or y is bigger than x
+
+
+--------------------------------------
+THOUGHTS BEFORE STARTING/RESEARCHING
+--------------------------------------
+-stucture page as a form
+-two <input> tags for user to input a number
+    convert the text to a number
+-<button> for user to submit
+-find out what pseduo class to use ::onClick or ::onSubmit JavaScript will check to see if the numbers are equal
+-::onClick or ::onSubmit JavaScript will add, multiply, and compare
+-boolean type for the compare
+    x > y return text, otherwise return other text
+-three sections to display results
+    <div> sections maybe?
+-learn how to place where results are returned
+    probably inserting name of function?
+
+*/
+function addXY()
+{
+    var x = parseInt(document.getElementById("valueX").value);
+    var y = parseInt(document.getElementById("valueY").value);
+    var z = document.getElementById("sum");
+    z.value = x + y;
+}
+function multiplyXY()
+{
+    var x = parseInt(document.getElementById("valueX").value);
+    var y = parseInt(document.getElementById("valueY").value);
+    var z = document.getElementById("product");
+    z.value = x * y;
+}
+function compareXY()
+{
+    var x = parseInt(document.getElementById("valueX").value);
+    var y = parseInt(document.getElementById("valueY").value);
+    if (x > y) {
+        comparison.value = "x is larger than y";
+    } else {
+        comparison.value = "y is larger than x";
+    }
+
+
+}
+
+
+</script>
+
+
+
+</head>
+<style>
+body {
+    background-color: rgb(165,215,220);
+}
+.first-section {
+    background-image: url("../images/circle.png");
+    background-repeat: repeat;
+    height: 100vh;
+}
+.content-holder {
+    margin: 0 auto;
+    position: relative;
+    top: 10vh;
+    width: 80vw;
+    height: 75vh;
+    background-color: white;
+    box-shadow: 15px 10px rgba(0,0,0,.4);
+    overflow: auto;
+}
+.header {
+    color: #DE1D35;
+    font-size: 4em;
+}
+#external-code {
+    padding-left: 40px;
+}
+.form {
+    padding: 10px;
+    line-height: 1.5;
+}
+
+</style>
+<body>
+    <div class="navbar">
+        <a id="home-text" href="../index.html">HOME</a>
+        <div class="login-dropdown">
+            <button class="login-dropbtn">LogIn</button>
+            <div class="login-dropdown-content">
+                <a title="Atlas Login" href="https://ptl5-cas-prod.valenciacollege.edu:8443/cas-web/login?service=https%3A%2F%2Fptl5pd-prod.valenciacollege.edu%2Fc%2Fportal%2Flogin" target="_blank">Atlas</a>
+                <a title="Canvas Login" href="https://online.valenciacollege.edu/?login_success=1" target="_blank">Canvas</a>            
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">PastProjects</button>
+            <div class="dropdown-content">
+                <a href="old-index.html">1st Page</a>
+                <a href="old-favorite-food.html">Food</a>
+                <a href="old-links.html">Links</a>
+                <a href="table.html">Table</a>
+                <a href="form.html">Form</a>
+                <a href="style-sheet-project.html">External CSS</a>
+                <a href="#">JavaScript</a>
+            </div>
+        </div>
+        <a title="Send me an emil" href="mailto:tbiggert@student.valencia.com" target="_blank">eMail</a>  
+    </div>
+    <div class="first-section">
+        <div class="content-holder">
+            <h2 class="header">JavaScript</h2>
+            <form class="form first-try">
+                X Value<input class="input-number" type="number" id="valueX" name="valueX">
+                <br>
+                Y Value<input class="input-number" type="number" id="valueY" name="valueY">
+                <br>
+                <input type="button" name="submit" value="add numbers" onclick="addXY()">
+                <input type="button" name="submit" value="multiply numbers" onclick="multiplyXY()">
+                <input type="button" name="submit" value="which is larger" onclick="compareXY()">
+                <br>
+                Sum (x + y) <input type="text" id="sum" name="sum">
+                <br>
+                Product (x * y) <input type="text" id="product" name="product">
+                <br>
+                Comparison (x &gt or &lt y) <input type="text" id="comparison" name="comparison">
+            </form>
+            <hr>
+            <div class="form second-try">
+                <form>
+                   
+                </form>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>
