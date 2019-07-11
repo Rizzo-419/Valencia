@@ -108,7 +108,7 @@ body {
                 Comparison (x &gt or &lt y) <input type="text" id="comparison2">
             </form>
             <div class="explination">
-                <p>This section uses <b>parseInt() method</b> to convert the string to a number. The outputs are written to input fields. User is alerted if they enter the name number.</p>
+                <p>This section uses <b>parseInt() method</b> to convert the string to a number. The outputs are written to input fields. User is alerted if they enter the same number.</p>
             </div>
             </div>
             <hr>
@@ -172,36 +172,36 @@ THOUGHTS AFTER COMPLETING LESSON
 
 
 //first section
-function sum(x,y,sumAnswer)
+function sum(x,y,z)
 {
     var x = document.getElementById("x").value;
     var y = document.getElementById("y").value;
-    var sumAnswer = parseFloat(x) + parseFloat(y);
+    var z = parseFloat(x) + parseFloat(y);
     if (x == y)
     {
         alert("Please enter unique numbers");
     }
     //Exclamation mark ! is a logical operator. Returns true for a statement that is false. Needed the operator because the if statment will only execute the code when it's condition is true.
-    else if(!isNaN(sumAnswer))
+    else if(!isNaN(z))
     {
-        document.getElementById("sumAnswer").innerHTML = "The Sum is " + sumAnswer;
+        document.getElementById("sumAnswer").innerHTML = "The Sum is " + z;
     }
 }
-function product(x,y,prodAnswr)
+function product(x,y,z)
 {
     var x = document.getElementById("x").value;
     var y = document.getElementById("y").value;
-    var prodAnswr = parseFloat(x) * parseFloat(y);
+    var z = parseFloat(x) * parseFloat(y);
     if (x == y)
     {
         alert("Please enter unique numbers");
     }
-    else if(!isNaN(prodAnswr))
+    else if(!isNaN(z))
     {
-        document.getElementById("productAnswer").innerHTML = "The Product is " + prodAnswr;
+        document.getElementById("productAnswer").innerHTML = "The Product is " + z;
     }
 }
-function compare(x,y,comparisonAnswer)
+function compare(x,y)
 {
     var x = parseFloat(document.getElementById("x").value);
     var y = parseFloat(document.getElementById("y").value);
@@ -215,9 +215,9 @@ function compare(x,y,comparisonAnswer)
 }
 function textRemove()//cant name this method reset()
     {
-        document.getElementById("sumAnswer").innerHTML = "";//could also use .style.display="none"
+        document.getElementById("sumAnswer").innerHTML = "";//could also use .style.display="none" shown below
         document.getElementById("productAnswer").style.display = "none";
-        document.getElementById("comparisonAnswer").innerHTML = "";//wonder if I can select multiple IDs at once
+        document.getElementById("comparisonAnswer").innerHTML = "";//wonder if I can select multiple IDs at once so I didnt have to take up the extra lines
     }
 
 //second section
@@ -268,8 +268,8 @@ function sum3()
 {
     var x3 = Number(document.getElementById("x3").value);
     var y3 = Number(document.getElementById("y3").value);
-    var sum3Answer = x3 + y3;
-    document.getElementById("sum3Answer").value = sum3Answer;
+    var z3 = x3 + y3;
+    document.getElementById("sum3Answer").value = z3;
 }
 
 </script>
