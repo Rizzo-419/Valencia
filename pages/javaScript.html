@@ -30,9 +30,15 @@ body {
     color: #DE1D35;
     font-size: 4em;
 }
-.form {
+.container {
+    display: flex;
+}
+.form, .explination {
+    width: 50%;
+    margin: 10px;
     padding: 10px;
     line-height: 1.5;
+    border: 1px solid gray;
 }
 
 </style>
@@ -62,46 +68,73 @@ body {
     </div>
     <div class="first-section">
         <div class="content-holder">
-            <h2 class="header">JavaScript</h2>
-            <form class="form first-try">
-                X Value: <input class="input-number" type="number" id="x">
-                <br>
-                Y Value: <input class="input-number" type="number" id="y">
-                <br>
-                <input type="button" value="Add" onclick="add()"><!--OnClick psuedo runs function. Type="button" prevents page submission-->
-                <input type="button" value="Multiply" onclick="multiply()">
-                <input type="button" value="Compare" onclick="compare()">
-                <br>
-                Sum (x + y) <input type="text" id="sum">
-                <br>
-                Product (x * y) <input type="text" id="product">
-                <br>
-                Comparison (x &gt or &lt y) <input type="text" id="comparison">
-            </form>
-            <hr>
-            <div class="form second-try">
-                <form>
-                    X<sub>2</sub> Value: <input type="text" id="x2">
+            <h2 class="header">Calculations</h2>
+            <div class="container">
+                <form class="form first-try">
+                    X Value: <input type="number" id="x" placeholder="enter #" size="6">
                     <br>
-                    Y<sub>2</sub> Value: <input type="text" id="y2">
+                    Y Value: <input type="number" id="y" placeholder="enter #" size="6">
                     <br>
-                    <button type="button" onclick="sum2()">Add</button>
-                    <button type="button" onclick="product2()">Multiply</button>
-                    <button type="button" onclick="compare2()">Compare</button>
-                    <p id="sum2Answer"></p>
-                    <p id="product2Answer"></p>
-                    <p id="comparison2Answer"></p>
+                    <button type="button" onclick="sum()">Add</button>
+                    <button type="button" onclick="product()">Multiply</button>
+                    <button type="button" onclick="compare()">Compare</button>
+                    <input type="reset" value="Reset" onclick="textRemove()"><!--Hiding the following text was a fun challenge to solve. Could not set the name of the function to reset()-->
+                    <p id="sumAnswer"></p>
+                    <p id="productAnswer"></p>
+                    <p id="comparisonAnswer"></p>
                 </form>
+                <div class="explination">
+                    <p>This section uses the <b>parseFloat function</b> to change the string to a number. Output is written using <b>innerHTML</b> because the values are being sent between p element tags.</p>
+                    <br>
+                    <p>The <b>text was not reseting</b>, so I made a function that reset it, but had to change the original name of the function from reset().
+                </div>                
             </div>
+            <hr>
+            <div class="container">
+            <form class="form second-try"> 
+                X<sub>2</sub> Value: <input type="number" id="x2" placeholder="unique number">
+                <br>
+                Y<sub>2</sub> Value: <input type="number" id="y2" placeholder="unique number">
+                <br>
+                <input type="button" value="Add" onclick="add2()"><!--OnClick event calls/executes method when button element selected. Type="button" prevents page submission-->
+                <input type="button" value="Multiply" onclick="multiply2()">
+                <input type="button" value="Compare" onclick="compare2()">
+                <input type="reset" value="Reset">
+                <br>
+                Sum (x + y) <input type="text" id="sum2" size="6">
+                <br>
+                Product (x * y) <input type="text" id="product2" size="6">
+                <br>
+                Comparison (x &gt or &lt y) <input type="text" id="comparison2">
+            </form>
+            <div class="explination">
+                <p>This section uses <b>parseInt() method</b> to convert the string to a number. The outputs are written to input fields. User is alerted if they enter the name number.</p>
+            </div>
+            </div>
+            <hr>
+            <div class="container">
+                <form class="form third-try">
+                    X<sub>3</sub> Value: <input id="x3" placeholder="enter #" size="6">
+                    <br>
+                    Y<sub>3</sub> Value: <input id="y3" placeholder="enter #" size="6">
+                    <br>
+                    <button type="button" onclick="sum3()">Add</button>
+                    <input type="reset" value="Reset">
+                    <br>
+                    Sum: <input id="sum3Answer">
+                </form>
+                <div class="explination">
+                    <p>This section uses the <b>number function</b>, and is probably the best option.</p>
+                </div>
+            </div>            
         </div>
     </div> 
 <!--
 -------------------------------------
 INSTRUCTIONS
 -------------------------------------
--delete external file, move to webpage
 -Ask user to input two numbers, x and y
--Numbers will be different?
+-Numbers will be different
 -Display sum of x and y is z
 -Display product of x and y is z
 -Display statement x is bigger than y, or y is bigger than x
@@ -125,68 +158,120 @@ THOUGHTS BEFORE STARTING/RESEARCHING
 
 
 --------------------------------------------
-THOUGHTS AFTER COPLETING LESSON
+THOUGHTS AFTER COMPLETING LESSON
 --------------------------------------------
-
+*Continue learning syntax terminology.
+*Naming of functions is import. I was using reset() but it was not doing what I wanted until I renamed it to textRemove().
+*Consider all options before starting.  parseInt, parseFloat, Number all get the result I want, but it will be important in the future to think about the pros and cons of all options.
+*Get out of the habbit of default to if and functions.
+*Comments need to be more precise.
 -->
 
 <script>
-    function add()
+
+
+
+//first section
+function sum(x,y,sumAnswer)
+{
+    var x = document.getElementById("x").value;
+    var y = document.getElementById("y").value;
+    var sumAnswer = parseFloat(x) + parseFloat(y);
+    if (x == y)
     {
-        var x = parseInt(document.getElementById("x").value);
-        var y = parseInt(document.getElementById("y").value);
-        var z = document.getElementById("sum");
-        z.value = x + y;
+        alert("Please enter unique numbers");
     }
-    function multiply()
+    //Exclamation mark ! is a logical operator. Returns true for a statement that is false. Needed the operator because the if statment will only execute the code when it's condition is true.
+    else if(!isNaN(sumAnswer))
     {
-        var x = parseInt(document.getElementById("x").value);
-        var y = parseInt(document.getElementById("y").value);
-        var z = document.getElementById("product");
-        z.value = x * y;
+        document.getElementById("sumAnswer").innerHTML = "The Sum is " + sumAnswer;
     }
-    function compare()
+}
+function product(x,y,prodAnswr)
+{
+    var x = document.getElementById("x").value;
+    var y = document.getElementById("y").value;
+    var prodAnswr = parseFloat(x) * parseFloat(y);
+    if (x == y)
     {
-        var x = parseInt(document.getElementById("x").value);
-        var y = parseInt(document.getElementById("y").value);
-        
-        if (x > y) {
-            comparison.value = "x is BIGGER than y";
-        } else {
-            comparison.value = "y is BIGGER than x";
+        alert("Please enter unique numbers");
+    }
+    else if(!isNaN(prodAnswr))
+    {
+        document.getElementById("productAnswer").innerHTML = "The Product is " + prodAnswr;
+    }
+}
+function compare(x,y,comparisonAnswer)
+{
+    var x = parseFloat(document.getElementById("x").value);
+    var y = parseFloat(document.getElementById("y").value);
+    if (x > y) {
+        document.getElementById("comparisonAnswer").innerHTML = "x is BIGGER than y";
+    } else if (x < y) {
+        document.getElementById("comparisonAnswer").innerHTML = "y is BIGGER than x";
+    } else {
+        alert("Please enter unique numbers");
+    }
+}
+function textRemove()//cant name this method reset()
+    {
+        document.getElementById("sumAnswer").innerHTML = "";//could also use .style.display="none"
+        document.getElementById("productAnswer").style.display = "none";
+        document.getElementById("comparisonAnswer").innerHTML = "";//wonder if I can select multiple IDs at once
+    }
+
+//second section
+function add2()
+{
+    var x2 = parseInt(document.getElementById("x2").value);//parseInt turns the string into an integer. Allows value to be added corretly instead of concatenating.
+    var y2 = parseInt(document.getElementById("y2").value);//value property is used because of the <input> element.
+    var z2 = document.getElementById("sum2");
+    if (x2 == y2) {//alerts user if same numbers are entered
+        z2.value = "values must be different";
+        alert("values must be different");//maybe background should change to red instead  
+    }   else {
+            z2.value = x2 + y2;
+    }
+}
+function multiply2()
+{
+    var x2 = parseInt(document.getElementById("x2").value);
+    var y2 = parseInt(document.getElementById("y2").value);
+    var z2 = document.getElementById("product2");
+    if (x2 == y2) {
+        z2.value = "values must be different";
+        alert("values must be different");
+    } else {
+        z2.value = x2 * y2;
+    }
+}
+function compare2()
+{
+    var x2 = parseInt(document.getElementById("x2").value);
+    var y2 = parseInt(document.getElementById("y2").value);
+    if (x2 == y2){
+        comparison2.value = "values must be different";
+        alert("Values must be different");
+    }
+        else if (x2 > y2) {
+        comparison2.value = "x is BIGGER than y";
+    }   else if (x2 < y2) {
+        comparison2.value = "y is BIGGER than x";
+    }
+        else {
+        comparison2.value = ""
         }
-    }
-    function sum2(x2,y2)
-    {
-        var x2 = document.getElementById("x2").value;
-        var y2 = document.getElementById("y2").value;
-        var sum2Answer = parseFloat(x2) + parseFloat(y2);
-        if(!isNaN(sum2Answer))
-        {
-            document.getElementById("sum2Answer").innerHTML = "The Sum is " + sum2Answer;
-        }
-    }
-    function product2(x2,y2)
-    {
-        var x2 = document.getElementById("x2").value;
-        var y2 = document.getElementById("y2").value;
-        var product2Answer = parseFloat(x2) * parseFloat(y2);
-        if(!isNaN(product2Answer))
-        {
-            document.getElementById("product2Answer").innerHTML = "The Product is " + product2Answer;
-        }
-    }
-    function compare2(x2,y2)
-    {
-        var x2 = document.getElementById("x2").value;
-        var y2 = document.getElementById("y2").value;
-        var comparison2Answer = 0;
-        if (x2 > y2) {
-            document.getElementById("comparison2Answer").innerHTML = "x is BIGGER than y";
-        } else {
-            document.getElementById("comparison2Answer").innerHTML = "y is BIGGER than x";
-        }
-    }
+}
+
+//third section
+function sum3()
+{
+    var x3 = Number(document.getElementById("x3").value);
+    var y3 = Number(document.getElementById("y3").value);
+    var sum3Answer = x3 + y3;
+    document.getElementById("sum3Answer").value = sum3Answer;
+}
+
 </script>
 </body>
 </html>
