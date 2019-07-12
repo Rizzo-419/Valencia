@@ -3,19 +3,17 @@
 <head>
     <meta charset="utf-8">
     <title>Tyler's Porfolio</title>
-    <link rel="stylesheet" type="text/css" href="style-sheet.css">
+    <link rel="stylesheet" type="text/css" href="styling/style-sheet.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Coming+Soon&display=swap" rel="stylesheet">
     <meta name="author" content="Tyler Biggert">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <style>
 
-
-/*-----------------
-first section start
-------------------*/
-section[class="first-section"] { /*CSS3 attribute selector example*/
-    height: calc(100vh - 39px);/*allows for height of nav bar*/
+/*first section start*/
+.first-section {
+    height: 100vh;
     background-color: rgb(165,215,220);
 }
 .name-tag-container {
@@ -26,7 +24,7 @@ section[class="first-section"] { /*CSS3 attribute selector example*/
     vertical-align: middle;
 }
 .name-tag {
-    display: block;/*switches inline to block so auto margin will work*/
+    display: block;/*converts inline element to block so auto margin will work*/
     margin: 0 auto;
     position: relative;
     top: 25vh;/*lowers img relative to where it should be*/
@@ -34,12 +32,9 @@ section[class="first-section"] { /*CSS3 attribute selector example*/
     max-width: 400px;
 }
 
-
-/*------------------
-second section start
--------------------*/
+/*second section start*/
 .second-section {
-    height: 110vh;
+    height: 110vh;/*extra height while user scrolls. Couldn't figure out how to make view stop scrolling at spots*/
     background-image: url("images/carrot.png");
     background-repeat: repeat;
 }
@@ -55,7 +50,7 @@ second section start
 }
 .red-line {
     content: '';
-    position: absolute;/*prevent red line from horizontal movement*/
+    position: absolute;/*don't want the red line to move horizontally*/
     left: 35px;
     width: 2px;
     height: 100%;
@@ -65,10 +60,10 @@ second section start
     height: 100%;
     background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
 }
-h2[class*="blue"]{/*CSS3 string wildcard expression*/
+.blue-header {
+    color:rgb(165,215,220);
     background-color: white;
     white-space: nowrap;
-    color: rgb(165,215,220);
 }
 .logo-container {
     padding: 20px 0 0 0;
@@ -76,16 +71,13 @@ h2[class*="blue"]{/*CSS3 string wildcard expression*/
     text-align: center;
     margin: 0 auto;
 }
-img[class="logo"] {/*CSS3 attribute selector*/
+.logo {
     width: 25vw;
     max-width: 180px;
     padding: 2vh;
 }
 
-
-/*-----------------
-third section start
-------------------*/
+/*third section start*/
 .third-section {
     height: 110vh;
     background-image: url("images/circle.png");
@@ -93,16 +85,11 @@ third section start
 }
 .study {
     color: #DE1D35;
-    padding-bottom: 15px;
-}
-li:nth-child(1){ /*CSS3 Psuedo selector*/
-    font-weight: bold;
+    text-shadow: 3px 3px rgba(0,0,0,.8);
+    padding-bottom: 10px;
 }
 
-
-/*------------------
-fourth section start
--------------------*/
+/*fourth section start*/
 .fourth-section {
     height: 100vh;
     background-image: url("images/carrot.png");
@@ -113,13 +100,33 @@ iframe {
     margin: 30px auto;
 }
 
-
 </style>
-</head>
 <body>
-<header class="top-header"><a name="top"></a>
+<a name="top"></a>
+
+
+
+
+
+
+   <section>
+    </section>
+    <aside>
+    </aside>
+    <aside>
+    </aside>
+    <footer>
+    </footer>
+
+
+
+
+
+
+
+<header class="first-section">
     <nav class="navbar">
-        <a id="home-text" href="#">HOME</a>
+        <a id="home-text" href="/index.html">HOME</a>
         <div class="login-dropdown">
             <button class="login-dropbtn">LogIn</button>
             <div class="login-dropdown-content">
@@ -141,21 +148,15 @@ iframe {
         </div>
         <a title="Send me an emil" href="mailto:tbiggert@student.valencia.com" target="_blank">eMail</a>  
     </nav>
-</header>
-
-<section  class="first-section">
     <div class="name-tag-container">
         <img class="name-tag" src="images/name-tag.png">
     </div>
-</section>
-
-<section class="second-section">
-    <article class="content-holder">
+</header>
+<div class="second-section">
+    <div class="content-holder">
         <div class="red-line"></div><!--close tag here so the division is not a child-->
         <div class="blue-lines">
-            <header>
-                <h2 class="blue-header my-bio">My Bio</h2>
-            </header>
+            <h2 class="blue-header my-bio">My Bio</h2>
             <div class="logo-container">
                 <img class="logo" src="images/pisces.png">
                 <img class="logo" src="https://media3.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif">
@@ -165,57 +166,45 @@ iframe {
                 <img class="logo" src="images/disney.png">
             </div>
         </div>
-    </article>
-</section>
-
-<section class="third-section">
-    <article class="content-holder">
-        <div class="red-line"></div>
+    </div>
+</div>
+<div class="third-section">
+    <div class="content-holder">
+        <div class="red-line"></div><!--close tag here so the division is not a child-->
         <div class="blue-lines">
-            <header>
-                <hgroup>
-                    <h2 class="study">Study</h2>
-                    <h3 class="study">Learning Programs</h3>
-                </hgroup>
-            </header>
-                <div>
-                    <ul>
-                        <li><b><a href="https://www.utoledo.edu/">University of Toledo</a></b> - BBA Finance 2014</li>
-                        <li><mark><b><a href="https://valenciacollege.edu/">Valencia </a></b>- Computer Programming Student</mark></li>
-                        <li><b><a href="http://terra.edu/">Terra State </a></b>- Business Administration</li>
-                        <li><b><a href="https://www.owens.edu/">Owens </a></b>- Business Administration</li>
-                    </ul>
-                    <hr>
-                    <br>
-                    <ul>
-                        <li><b><a href="https://www.udemy.com/the-complete-web-developer-zero-to-mastery/">uDemy </a></b>- The Complete Web Developer in 2019: Zero to Mastery</li>
-                        <li><b><a href="https://www.lynda.com/">LinkedIn Learning </a></b>- Eight certificates of completion</li>
-                        <li><b><a href="https://www.duolingo.com/">Duolingo </a></b>- 130 Spanish crowns</li>
-                    </ul>
-                </div>
+            <h2 class="study">Study</h2>
+            <div class="study-text">
+                <ul>
+                    <li><b><a href="https://www.utoledo.edu/">University of Toledo</a></b> - BBA Finance</li>
+                    <li><mark><b><a href="https://valenciacollege.edu/">Valencia </a></b>- Web Site Development COP2822C</mark></li>
+                    <li><b><a href="http://terra.edu/">Terra State </a></b>- Business Administration</li>
+                    <li><b><a href="https://www.owens.edu/">Owens </a></b>- Business Administration</li>
+                </ul>
+<hr>
+<br>
+                <ul>
+                    <li><b><a href="https://www.udemy.com/the-complete-web-developer-zero-to-mastery/">uDemy </a></b>- The Complete Web Developer in 2019: Zero to Mastery</li>
+                    <li><b><a href="https://www.lynda.com/">Lynda </a></b>- Eight certificates of completion</li>
+                    <li><b><a href="https://www.duolingo.com/">Duolingo </a></b>- 130 Spanish crowns</li>
+                </ul>
+            </div>
         </div>
-    </article>
+    </div>
 <div class="back-to-top">
     <a href="#top">Top</a><!--only goes to bottom of content-holder because there are two divs inside a parent div-->
 </div>
-</section>
-
-<section class="fourth-section">
-    <article class="content-holder">
+</div>
+<div class="fourth-section">
+    <div class="content-holder">
         <div class="red-line"></div>
         <div class="blue-lines">
-            <header>
-                <h2 class="blue-header youtube-text">YouTube</h2>
-            </header>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/-lXLqL82pkg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h2 class="blue-header youtube-text">YouTube</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-lXLqL82pkg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-    </article>
+    </div>
 <div class="back-to-top">
     <a href="#top">Top</a>
 </div>
-</section>
-<footer class="bottom-footer">
-    <p>Created July 2019 by Tyler Biggert || <a title="Send me an emil" href="mailto:tbiggert@student.valencia.com" target="_blank">Send me an email</a><p>
-</footer>
+</div>
 </body>
 </html>

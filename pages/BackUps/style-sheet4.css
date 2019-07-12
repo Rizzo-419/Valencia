@@ -2,11 +2,11 @@
 
 
 /*Browser CSS reset */
-html, body, button, div, span, applet, object, iframe,
+html, button, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, sub, sup, tt, var,
+small, strike, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
@@ -18,17 +18,54 @@ time, audio, video, strong {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;}
 
 
-/*nav bar start...will be on every page so it belongs on style sheet*/
+/*generic list formatting since I have browser reset*/
+a[href]{ /*CSS3 attribute selector*/
+    text-decoration: none;
+}
+li {
+    line-height: 2em;
+    margin: 0 0 0 40px;
+    list-style-type: square;
+    font-family: 'Coming Soon', cursive;
+    font-size: 23px;
+}
+hr {
+    border-top: 5px solid black;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 800px;
+}
+mark {
+    font-family: 'Coming Soon', cursive;
+    font-size: 23px;
+}
+h2 {/*wont scale well with site*/
+    font-size: 15vh;
+    font-weight: bold;
+    text-align: center;
+    background-color: white;
+    text-shadow: 3px 3px rgba(0,0,0,.8);
+}
+h3 {
+    font-size: 5vh;
+    font-weight: bold;
+    text-align: center;
+    background-color: white;
+}
+b {
+    font-weight: bold;
+    font-family: inherit;
+}
+
+
+/*nav bar start*/
 .navbar {
-    width: 95vw;
-    margin: 0 auto;
     overflow: hidden;
     background-color: rgb(165,215,220);
 }
@@ -38,12 +75,10 @@ time, audio, video, strong {
     text-align: center;
     padding: 15px 10px 5px 10px;
     text-decoration: none;
-    font-weight: bold;
 }
 .dropdown, .login-dropdown{
     float: right;
     overflow: none;
-    font-weight: bold;
 }
 .dropdown .dropbtn, .login-dropdown .login-dropbtn {
     border: none;
@@ -85,6 +120,7 @@ time, audio, video, strong {
 #home-text {
     float: left;
 }
+
 /*back to top button in bottom right of page*/
 .back-to-top {
     float:right;
@@ -100,37 +136,13 @@ time, audio, video, strong {
     color: black;
 }
 
-/*generic list formatting since I have browser reset*/
-li {
-    line-height: 2em;
-    margin: 0 0 0 40px;
-    list-style-type: square;
-    font-family: 'Coming Soon', cursive;
-    font-size: 23px;
-}
-hr {
-    border-top: 5px solid black;
-    border-radius: 5px;
-    width: 90%;
-    max-width: 800px;
-}
-mark {
-    font-family: 'Coming Soon', cursive;
-    font-size: 23px;
-}
-h2 {/*wont scale well with site*/
-    font-size: 15vh;
-    font-weight: bold;
+.bottom-footer {
     text-align: center;
+    background-image: url("images/carrot.png");
+    background-repeat: repeat;
+}
+.bottom-footer p {
+    display: inline-block;
     background-color: white;
-    text-shadow: 3px 3px rgba(0,0,0,.8);
-}
-b {
-    font-weight: bold;
-    font-family: inherit;/*need to learn why font goes back to default*/
-}
-a:link, a:visited, a:active{
-    text-decoration: none;
-    color: inherit;
-    font-family: inherit;
+    padding: 0 2px;
 }

@@ -2,11 +2,11 @@
 
 
 /*Browser CSS reset */
-html, body, button, div, span, applet, object, iframe,
+html, button, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
+small, strike, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
@@ -14,24 +14,50 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, audio, video, strong {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;}
 
 
-h2 {
+/*generic list formatting since I have browser reset*/
+li {
+    line-height: 2em;
+    margin: 0 0 0 40px;
+    list-style-type: square;
+    font-family: 'Coming Soon', cursive;
+    font-size: 23px;
+}
+hr {
+    border-top: 5px solid black;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 800px;
+}
+mark {
+    font-family: 'Coming Soon', cursive;
+    font-size: 23px;
+}
+h2 {/*wont scale well with site*/
     font-size: 15vh;
     font-weight: bold;
     text-align: center;
     background-color: white;
     text-shadow: 3px 3px rgba(0,0,0,.8);
-    padding-bottom: 5px;
+}
+h3 {
+    font-size: 5vh;
+    font-weight: bold;
+    text-align: center;
+    background-color: white;
+}
+b {
+    font-weight: bold;
+    font-family: inherit;
 }
 
 
@@ -48,12 +74,10 @@ h2 {
     text-align: center;
     padding: 15px 10px 5px 10px;
     text-decoration: none;
-    font-weight: bold;
 }
 .dropdown, .login-dropdown{
     float: right;
     overflow: none;
-    font-weight: bold;
 }
 .dropdown .dropbtn, .login-dropdown .login-dropbtn {
     border: none;
@@ -94,4 +118,30 @@ h2 {
 }
 #home-text {
     float: left;
+}
+
+/*back to top button in bottom right of page*/
+.back-to-top {
+    float:right;
+    position:sticky;
+    bottom: 5px;
+    background-color: white;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+.back-to-top a {
+    text-decoration: none;
+    color: black;
+}
+
+.bottom-footer {
+    text-align: center;
+    background-image: url("images/carrot.png");
+    background-repeat: repeat;
+}
+.bottom-footer p {
+    display: inline-block;
+    background-color: white;
+    padding: 0 2px;
 }
