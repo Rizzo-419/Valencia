@@ -107,6 +107,7 @@ b {
 #home-text {
     float: left;
 }
+
 /*back to top button in bottom right of page*/
 .back-to-top {
     position:fixed;

@@ -1,30 +1,16 @@
 
 
 
-/*Browser CSS reset */
-html, button, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, audio, video, strong {
+/*reset browser default values*/
+* {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	font: inherit;
 	vertical-align: baseline;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;}
-
-
-/*generic list formatting since I have browser reset*/
+    font-family: 'Roboto', sans-serif;
+}
 a[href]{ /*CSS3 attribute selector*/
     text-decoration: none;
 }
@@ -45,7 +31,7 @@ mark {
     font-family: 'Coming Soon', cursive;
     font-size: 23px;
 }
-h2 {/*wont scale well with site*/
+h2 {
     font-size: 15vh;
     font-weight: bold;
     text-align: center;

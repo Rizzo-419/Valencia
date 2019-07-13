@@ -26,39 +26,33 @@ section[class="first-section"] { /*CSS3 attribute selector example*/
     text-align: center;
     vertical-align: middle;
 }
-#combined-tags {
+.combined-tags {
     display:inline-block;
-    position:relative;
-    height: 210px;
-    width:100%;
-    top:35%;
-    transition-duration: 2s;
 }
 #name-tag, #name-tag2 {
     display: block;/*switches inline to block so auto margin will work*/
-    position: relative;/*allows animation to work*/
     margin: 0 auto;
+    position: relative;
+    top: 25vh;/*lowers img relative to where it should be*/
     width: 90vh;
     max-width: 400px;
-    size: inherit;
-}
-#name-tag {
     animation: slideImg 2s;
 }
-#name-tag2 {
+#name-tag2{
     animation: slideImg2 2s;
 }
-
-@keyframes slideImg {
-    from {right:500px;}
-    to {right:0px;}
+#name-tag:hover, #name-tag2:hover { /*fix the div element height that goes up to nav bar*/
+    transform: scale(1.25);
+    transition-duration: 1s;
 }
-@keyframes slideImg2 {
-    from {left: 100%;}
+@keyframes slideImg {
+    from {left:100%;}
     to {left:0px;}
 }
-
-
+@keyframes slideImg2 {
+    from {right: 100%;}
+    to {right:0px;}
+}
 /*------------------
 second section start
 -------------------*/
@@ -170,7 +164,7 @@ iframe {
 
 <section  class="first-section">
     <div class="name-tag-container">
-        <div id="combined-tags" onmouseover="nameLarge()" onmouseout="nameRegular()">
+        <div class="combined-tags">
             <img id="name-tag" src="images/name-tag.png">
             <img id="name-tag2" src="images/name-tag2.png">
         </div>
