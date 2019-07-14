@@ -1,12 +1,12 @@
 
 
-window.addEventListener("scroll", backToTop);//when the onscroll even happens it calls the function backToTop. Could also use window.onscroll = function() {backToTop()};
-
 
 //Back to Top Button
+window.addEventListener("scroll", backToTop);//Could also use window.onscroll = function() {backToTop()};
 function backToTop() {
-    if(document.documentElement.scrollTop > 750) {
+    if(document.documentElement.scrollTop > 375) {
         document.getElementById("backToTop").style.visibility = "visible";
+        document.getElementById("logo-container").style.opacity = "1";   
     }
         else {
             document.getElementById("backToTop").style.visibility = "hidden";
@@ -20,4 +20,3 @@ function nameLarge () {
 function nameRegular () {
     document.getElementById("combined-tags").style.transform = "scale(1)";
 }
-
