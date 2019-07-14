@@ -65,7 +65,6 @@ b {
 }
 .dropdown, .login-dropdown{
     float: right;
-    overflow: none;
 }
 .dropdown .dropbtn, .login-dropdown .login-dropbtn {
     border: none;
@@ -107,6 +106,7 @@ b {
 #home-text {
     float: left;
 }
+
 /*back to top button in bottom right of page*/
 .back-to-top {
     position:fixed;

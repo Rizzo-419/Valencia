@@ -32,7 +32,7 @@ section[class="first-section"] { /*CSS3 attribute selector example*/
     height: 210px;
     width:100%;
     top:35%;
-    transition-duration: 2s;
+    transition-duration: 1.5s;
 }
 #name-tag, #name-tag2 {
     display: block;/*switches inline to block so auto margin will work*/
@@ -40,7 +40,6 @@ section[class="first-section"] { /*CSS3 attribute selector example*/
     margin: 0 auto;
     width: 90vh;
     max-width: 400px;
-    size: inherit;
 }
 #name-tag {
     animation: slideImg 2s;
@@ -134,11 +133,46 @@ fourth section start
     background-repeat: repeat;
     text-align: center; 
 }
-iframe {
+#skin {
+    width: 700px;
     margin: 30px auto;
+    padding: 15px 5px;
+    background: rgb(165,215,220);
+    border: 2px solid black;
+    border-radius: 10px;
 }
-
-
+#movieNav {
+    margin: 5px 0px;
+}
+#buttons {
+    float:left;
+    width:70px;
+    height:22px;
+}
+#playButton {
+    padding: 1px;
+    border: 1px solid black;
+}
+#playButton:hover {
+    background-color: #DE1D35;
+    cursor: pointer;
+    color:white;
+}
+#defaultBar {
+    position: relative;
+    float: left;
+    width: 600px;
+    height: 24px;
+    padding: 4px;
+    border: 2px solid black;
+    background: white;
+}
+#progressBar {
+    position: absolute;
+    width:0px;
+    height: 12px;
+    background:#DE1D35;
+}
 </style>
 </head>
 <body>
@@ -233,7 +267,20 @@ iframe {
             <header>
                 <h2 class="blue-header youtube-text">YouTube</h2>
             </header>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/-lXLqL82pkg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <section id="skin">
+                <video id="myMovie" width="640" height="360">
+                    <source src="videos/vine.mp4">
+                </video>
+                <nav id="movieNav">
+                    <div id="buttons">
+                        <button type="button" id="playButton">Play</button>
+                    </div>
+                    <div id="defaultBar">
+                        <div id="progressBar"></div>
+                    </div>
+                    <div style="clear:both"></div>
+                </nav>
+            </section>
         </div>
     </article>
 <div id="backToTop" class="back-to-top">
