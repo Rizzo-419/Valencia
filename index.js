@@ -1,4 +1,33 @@
 
+//Transform name tag on hover
+function nameLarge () {
+    document.getElementById("combined-tags").style.transform = "scale(1.25)";
+}
+function nameRegular () {
+    document.getElementById("combined-tags").style.transform = "scale(1)";
+}
+
+
+
+//Back to Top Button & Logo Container visibility
+window.onscroll = function() {backToTop()};//Could also use window.addEventListener("scroll", backToTop);
+function backToTop() {
+    if(document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        document.getElementById("backToTop").style.visibility = "visible";
+        document.getElementById("logo-container").style.opacity = "1";
+    }
+        else {
+            document.getElementById("backToTop").style.visibility = "hidden";
+    }
+}
+
+
+
+
+
+/* ---------------------------------------------
+The following section was a code along tutorial
+-----------------------------------------------*/
 var barSize=600;
 
 function doFirst() {
@@ -41,28 +70,5 @@ function clickedBar(e){//pasing e parameter in for mouse position
 }
 window.addEventListener('load',doFirst, false);
 
-
-
-//Transform name tag on hover
-function nameLarge () {
-    document.getElementById("combined-tags").style.transform = "scale(1.25)";
-}
-function nameRegular () {
-    document.getElementById("combined-tags").style.transform = "scale(1)";
-}
-
-
-
-//Back to Top Button & Logo Container visibility
-window.onscroll = function() {backToTop()};//Could also use window.addEventListener("scroll", backToTop);
-function backToTop() {
-    if(document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        document.getElementById("backToTop").style.visibility = "visible";
-        document.getElementById("logo-container").style.opacity = "1";
-    }
-        else {
-            document.getElementById("backToTop").style.visibility = "hidden";
-    }
-}
 
 
