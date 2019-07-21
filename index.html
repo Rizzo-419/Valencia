@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Tyler's Porfolio</title>
@@ -9,174 +10,11 @@
     <link href="https://fonts.googleapis.com/css?family=Coming+Soon&display=swap" rel="stylesheet">
     <meta name="author" content="Tyler Biggert">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-
-
-/*-----------------
-first section start
-------------------*/
-section[class="first-section"] { /*CSS3 attribute selector example*/
-    height: calc(100vh - 39px);/*allows for height of nav bar*/
-    background-color: rgb(165,215,220);
-}
-.container {
-    height: 100%;
-    background-image: url("images/circle.png");
-    background-repeat: repeat;
-    text-align: center;
-    vertical-align: middle;
-}
-#combined-tags {
-    display:inline-block;
-    position:relative;
-    height: 210px;
-    width:100%;
-    top:35%;
-    transition-duration: 1.5s;
-}
-#name-tag, #name-tag2 {
-    display: block;/*switches inline to block so auto margin will work*/
-    position: relative;/*allows animation to work*/
-    margin: 0 auto;
-    width: 90vh;
-    max-width: 400px;
-}
-#name-tag {
-    animation: slideImg 2s;
-}
-#name-tag2 {
-    animation: slideImg2 3s;
-}
-
-@keyframes slideImg {
-    from {right:100%;}
-    to {right:0px;}
-}
-@keyframes slideImg2 {
-    from {left: 200%;}
-    to {left:0px;}
-}
-
-
-/*------------------
-second section start
--------------------*/
-.second-section {
-    height: 110vh;
-    background-image: url("images/carrot.png");
-    background-repeat: repeat;
-}
-.content-holder {
-    margin: 0 auto;
-    position: relative;
-    top: 10vh;
-    width: 80vw;
-    height: 85vh;
-    background-color: white;
-    box-shadow: 15px 10px rgba(0,0,0,.4);
-    overflow: hidden;
-}
-.red-line {
-    content: '';
-    position: absolute;/*prevent red line from horizontal movement*/
-    left: 35px;
-    width: 2px;
-    height: 100%;
-    background-color: #DE1D35; 
-}
-.blue-lines {
-    height: 100%;
-    background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
-}
-h2[class*="blue"]{/*CSS3 string wildcard expression*/
-    background-color: white;
-    white-space: nowrap;
-    color: rgb(165,215,220);
-}
-#logo-container {
-    padding: 20px 0 0 0;
-    max-width: 700px;
-    text-align: center;
-    margin: 0 auto;
-    opacity: 0;
-    transition-duration: 5s;
-}
-img[class~="logo"] {/*CSS3 attribute selector*/
-    width: 25vw;
-    max-width: 180px;
-    padding: 2vh;
-}
-
-/*-----------------
-third section start
-------------------*/
-.third-section {
-    height: 110vh;
-    background-image: url("images/circle.png");
-    background-repeat: repeat;
-}
-.study {
-    color: #DE1D35;
-    padding-bottom: 15px;
-}
-li:nth-child(1){ /*CSS3 Psuedo selector*/
-    font-weight: bold;
-}
- 
-
-/*------------------
-fourth section start
--------------------*/
-.fourth-section {
-    height: 100vh;
-    background-image: url("images/carrot.png");
-    background-repeat: repeat;
-    text-align: center; 
-}
-#skin {
-    width: 700px;
-    margin: 30px auto;
-    padding: 15px 5px;
-    background: rgb(165,215,220);
-    border: 2px solid black;
-    border-radius: 10px;
-}
-#movieNav {
-    margin: 5px 0px;
-}
-#buttons {
-    float:left;
-    width:70px;
-    height:22px;
-}
-#playButton {
-    padding: 1px;
-    border: 1px solid black;
-}
-#playButton:hover {
-    background-color: #DE1D35;
-    cursor: pointer;
-    color:white;
-}
-#defaultBar {
-    position: relative;
-    float: left;
-    width: 600px;
-    height: 24px;
-    padding: 4px;
-    border: 2px solid black;
-    background: white;
-}
-#progressBar {
-    position: absolute;
-    width:0px;
-    height: 12px;
-    background:#DE1D35;
-}
-</style>
 </head>
+
 <body>
 <div id="big_wrapper">
+
 <header class="top-header"><a name="top"></a>
     <nav class="navbar">
         <a id="home-text" href="#">HOME</a>
@@ -189,7 +27,7 @@ fourth section start
         </div>
         <div class="dropdown">
             <button class="dropbtn">PastProjects</button>
-            <div class="dropdown-content">
+            <div class="dropdown-content"><!--could-->
                 <a href="pages/old-index.html">1st Page</a>
                 <a href="pages/old-favorite-food.html">Food</a>
                 <a href="pages/old-links.html">Links</a>
@@ -204,12 +42,12 @@ fourth section start
 </header>
 
 <section  class="first-section">
-    <div class="container">
+    <article class="container">
         <div id="combined-tags">
             <img id="name-tag" src="images/name-tag.png" onmouseover="nameLarge()" onmouseout="nameRegular()">
             <img id="name-tag2" src="images/name-tag2.png" onmouseover="nameLarge()" onmouseout="nameRegular()">
         </div>
-    </div>
+    </article>
 </section>
 
 <section class="second-section">
@@ -220,12 +58,12 @@ fourth section start
                 <h2 class="blue-header my-bio">My Bio</h2>
             </header>
             <div id="logo-container">
-                <img id="testLogo" class="logo popUpImg" src="images/pisces.png">
-                <img class="logo popUpImg" src="https://media3.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif">
-                <img class="logo popUpImg" src="images/youTube.png">
-                <img class="logo popUpImg" src="images/reddit.png">
-                <img class="logo popUpImg" src="images/mason.png">
-                <img class="logo popUpImg" src="images/disney.png">
+                <img class="logo rotateImg" src="images/pisces.png">
+                <img class="logo rotateImg" src="https://media3.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif">
+                <img class="logo rotateImg" src="images/youTube.png">
+                <img class="logo rotateImg" src="images/reddit.png">
+                <img class="logo rotateImg" src="images/mason.png">
+                <img class="logo rotateImg" src="images/disney.png">
             </div>
         </div>
     </article>
@@ -260,7 +98,7 @@ fourth section start
     </article>
 </section>
 
-<section class="fourth-section">
+<section id="fourth-section">
     <article class="content-holder">
         <div class="red-line"></div>
         <div class="blue-lines">
@@ -283,14 +121,16 @@ fourth section start
             </section>
         </div>
     </article>
+    <div id="rocket" onclick="rocketBlastOff()"></div>
 <div id="backToTop" class="back-to-top">
     <a href="#top">Top</a>
 </div>
 </section>
 
 <footer class="bottom-footer">
-    <p>Created July 2019 by Tyler Biggert || <a title="Send me an emil" href="mailto:tbiggert@student.valencia.com" target="_blank">Send me an email</a><p>
+    <p>Created July 2019 by Tyler Biggert || <a title="Send me an email" href="mailto:tbiggert@student.valencia.com" target="_blank">Send me an email</a><p>
 </footer>
+
 </div>
 </body>
 </html>

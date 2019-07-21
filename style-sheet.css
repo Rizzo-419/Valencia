@@ -15,6 +15,9 @@
 a[href]{ /*CSS3 attribute selector*/
     text-decoration: none;
 }
+#big_wrapper {
+    overflow: hidden; /*stops scroll bar from displaying when name tag is hovered*/
+}
 li {
     line-height: 2em;
     margin: 0 0 0 40px;
@@ -24,7 +27,7 @@ li {
 }
 hr {
     border-top: 5px solid black;
-    border-radius: 5px;
+    border-radius: 5px;/*CSS3 property to round edges of elements*/
     width: 90%;
     max-width: 800px;
 }
@@ -37,7 +40,7 @@ h2 {
     font-weight: bold;
     text-align: center;
     background-color: white;
-    text-shadow: 3px 3px rgba(0,0,0,.8);
+    text-shadow: 3px 3px rgba(0,0,0,.8);/*CSS3 shadowing instead of duplicate image behind text*/
 }
 h3 {
     font-size: 5vh;
@@ -50,11 +53,10 @@ b {
     font-family: inherit;
 }
 
-
 /*nav bar start*/
 .navbar {
     overflow: hidden;
-    background-color: rgb(165,215,220);
+    background-color: hsl(187, 39%, 74%);/*CSS3 hue, saturation, lightness color value*/
 }
 .navbar a {
     float: right;
@@ -73,7 +75,7 @@ b {
     font-size: inherit;
 }
 .navbar a:hover, .dropdown:hover .dropbtn, .login-navbar a:hover, .login-dropdown:hover .login-dropbtn {
-    background-color: #DE1D35;
+    background-color: hsla(360, 71%, 46%, 1);/*dont really need hsla because opacity is set to 1*/
     color: white;
 }
 .dropdown-content, .login-dropdown-content {
@@ -90,10 +92,10 @@ b {
     display: block;
     text-align: left;
     background-color: white;
-    border: 1px dashed #DE1D35;
+    border: 1px dashed hsla(360, 71%, 46%, 1);
 }
 .dropdown-content a:hover, .login-dropdown-content a:hover {
-    background-color: #DE1D35;
+    background-color: hsla(360, 71%, 46%, 1);
     color: white;
     border: 1px dashed white;
 }
@@ -107,7 +109,7 @@ b {
     float: left;
 }
 
-/*back to top button in bottom right of page*/
+/*back to top button*/
 .back-to-top {
     position:fixed;
     bottom: 5px;
@@ -122,7 +124,12 @@ b {
     text-decoration: none;
     color: black;
 }
+.back-to-top:hover, .back-to-top a:hover {
+    color:white;
+    background-color: hsla(360, 71%, 46%, 1);
+}
 
+/*footer start*/
 .bottom-footer {
     text-align: center;
     background-image: url("images/carrot.png");
@@ -132,4 +139,183 @@ b {
     display: inline-block;
     background-color: white;
     padding: 0 2px;
+}
+
+
+/*------------------
+first section start - this should be a separate style sheet, but wanted to keep everything together
+--------------------*/
+section[class="first-section"] { /*CSS3 attribute selector*/
+    height: calc(100vh - 39px);/*allows for height of nav bar*/
+    background-color: hsl(187, 39%, 74%);
+}
+.container {
+    height: 100%;
+    background-image: url("images/circle.png");
+    background-repeat: repeat;
+    text-align: center;
+    vertical-align: middle;
+}
+#combined-tags {
+    display:inline-block;
+    position:relative;
+    height: 210px;
+    width:100%;
+    top:35%;
+    transition-duration: 1.5s;
+}
+#name-tag, #name-tag2 {
+    display: block;/*switches inline to block so auto margin will work*/
+    position: relative;/*allows animation to work*/
+    margin: 0 auto;
+    width: 90vh;
+    max-width: 400px;
+}
+#name-tag {
+    animation: slideImg 2s;
+}
+#name-tag2 {
+    animation: slideImg2 3s;
+}
+@keyframes slideImg {
+    from {right:100%;}
+    to {right:0px;}
+}
+@keyframes slideImg2 {
+    from {left: 200%;}
+    to {left:0px;}
+}
+
+
+/*------------------
+second section start
+-------------------*/
+.second-section {
+    height: 110vh;
+    background-image: url("images/carrot.png");
+    background-repeat: repeat;
+}
+.content-holder {
+    margin: 0 auto;
+    position: relative;
+    top: 10vh;
+    width: 80vw;
+    height: 85vh;
+    background-color: white;
+    box-shadow: 15px 10px rgba(0,0,0,.4);/*CSS3 drop shadow & opacity level*/
+    overflow: hidden;
+}
+.red-line {
+    content: '';
+    position: absolute;/*prevent red line from horizontal movement*/
+    left: 35px;
+    width: 2px;
+    height: 100%;
+    background-color: hsla(360, 71%, 46%, 1); 
+}
+.blue-lines {
+    height: 100%;
+    background-image: repeating-linear-gradient(white 0px, white 24px, hsl(187, 39%, 74%) 26px);/*CSS3 linear-gradient*/
+}
+h2[class*="blue"]{/*CSS3 string wildcard expression*/
+    background-color: white;
+    white-space: nowrap;
+    color: hsl(187, 39%, 74%);
+}
+#logo-container {
+    display: grid;/*CSS3 grid display*/
+    grid-template-columns: auto auto auto;
+    opacity: 0;/*transparent until JavaScript function runs*/
+    transition-duration: 5s;
+}
+img[class~="logo"] {/*CSS3 attribute selector containing "logo" value*/
+    padding: 10px;
+    width: 200px;
+    margin: 0 auto;
+    position: relative;
+    top: 75px;
+    transition: all 2s ease;
+}
+img[class*="rotateImg"]:hover { 
+    transform: rotateY(360deg);/*transform using only CSS3*/
+}
+
+/*-----------------
+third section start
+------------------*/
+.third-section {
+    height: 110vh;
+    background-image: url("images/circle.png");
+    background-repeat: repeat;
+}
+.study {
+    color: hsla(360, 71%, 46%, 1);
+    padding-bottom: 15px;
+}
+li:nth-child(1){ /*CSS3 Psuedo selector*/
+    font-weight: bold;
+}
+ 
+
+/*------------------
+fourth section start
+-------------------*/
+#fourth-section {
+    height: 100vh;
+    background-image: url("images/rocket5.png"), url("images/carrot.png");/*CSS3 multiple background images*/
+    background-position-y: 100%;
+    background-repeat: no-repeat, repeat;
+    text-align: center; 
+}
+#rocket {
+    position: relative;
+    bottom: 200px;
+    height: 500px;
+    width: 150px;
+    cursor: pointer;
+}
+#skin {
+    width: 700px;
+    margin: 30px auto;
+    padding: 15px 5px;
+    background: hsl(187, 39%, 74%);
+    border: 2px solid black;
+    border-radius: 10px;
+}
+#movieNav {
+    margin: 5px 0px;
+}
+#buttons {
+    float:left;
+    width:70px;
+    height:22px;
+}
+#playButton {
+    padding: 1px;
+    border: 1px solid black;
+}
+#playButton:hover {
+    background-color: hsla(360, 71%, 46%, 1);
+    cursor: pointer;
+    color:white;
+}
+#defaultBar {
+    position: relative;
+    float: left;
+    width: 600px;
+    height: 24px;
+    padding: 4px;
+    border: 2px solid black;
+    background: white;
+}
+#progressBar {
+    position: absolute;
+    width:0px;
+    height: 12px;
+    background:hsla(360, 71%, 46%, 1);
+}
+#rocket img {
+    position: relative;
+    width: 150%;
+    top:25%;
 }

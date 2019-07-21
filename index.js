@@ -7,8 +7,6 @@ function nameRegular () {
     document.getElementById("combined-tags").style.transform = "scale(1)";
 }
 
-
-
 //Back to Top Button & Logo Container visibility
 window.onscroll = function() {backToTop()};//Could also use window.addEventListener("scroll", backToTop);
 function backToTop() {
@@ -18,17 +16,24 @@ function backToTop() {
     }
         else {
             document.getElementById("backToTop").style.visibility = "hidden";
+            document.getElementById("logo-container").style.opacity = "0";
     }
 }
 
 
-
+//Fourth Section Rocket
+function rocketBlastOff() {
+    document.getElementById("fourth-section").style.backgroundPositionY = "0%";//Unable to code incremental movement without using any guides/stackOverflow
+    document.getElementById("rocket").style.cursor = "default";
+    document.getElementById("rocket").innerHTML = "<img src=\"images/smoke.png\">";//Escape character used
+}
 
 
 /* ---------------------------------------------
 The following section was a code along tutorial
 -----------------------------------------------*/
-var barSize=600;
+
+var barSize=600;//Global scope variable because it was defined outside of a function.
 
 function doFirst() {
     myMovie = document.getElementById('myMovie');
@@ -40,7 +45,7 @@ function doFirst() {
     bar.addEventListener('click', clickedBar, false);
 }
 function playOrPause(){
-    if(!myMovie.paused && !myMovie.ended) {//video is playing
+    if(!myMovie.paused && !myMovie.ended) {//video is playing because it is not paused AND not ended
         myMovie.pause();
         playButton.innerHTML = "Play";
         window.clearInterval(updateBar);
