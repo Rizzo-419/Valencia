@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"><!-- lang attribute can now be used on any element -->
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"><!-- HTML5 now supports UTF-8 and UTF-16 -->
     <title>Tyler's Porfolio</title>
-    <script src="index.js"></script>
     <link rel="stylesheet" type="text/css" href="style-sheet.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Coming+Soon&display=swap" rel="stylesheet">
     <meta name="author" content="Tyler Biggert">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="no-cache"><!-- solve cache issue -->
+    <meta http-equiv="pragma" content="no-cache">
+    <script src="index.js"></script><!-- learned to place this element in the proper location...could also place at the bottom of the body tag -->
 </head>
 
 <body>
 <div id="big_wrapper">
 
-<header class="top-header"><a name="top"></a>
-    <nav class="navbar">
+<header class="top-header"><a name="top"></a><!-- HTML5 semantic tag instead of a div with ID of "header" -->
+    <nav class="navbar"><!-- html5 semantic tag -->
         <a id="home-text" href="#">HOME</a>
         <div class="login-dropdown">
             <button class="login-dropbtn">LogIn</button>
@@ -27,7 +29,7 @@
         </div>
         <div class="dropdown">
             <button class="dropbtn">PastProjects</button>
-            <div class="dropdown-content"><!--could-->
+            <div class="dropdown-content"><!-- could have marked up as an unordered list -->
                 <a href="pages/old-index.html">1st Page</a>
                 <a href="pages/old-favorite-food.html">Food</a>
                 <a href="pages/old-links.html">Links</a>
@@ -37,12 +39,12 @@
                 <a href="pages/javaScript.html">JavaScript</a>
             </div>
         </div>
-        <a title="Send me an emil" href="mailto:tbiggert@student.valencia.com" target="_blank">eMail</a>  
+        <a title="Send me an emil" href="mailto:tbiggert@student.valencia.com" target="_blank">eMail</a>
     </nav>
 </header>
 
-<section  class="first-section">
-    <article class="container">
+<section  class="first-section"><!-- html5 semantic tag -->
+    <article class="container"><!-- html5 semantic tag -->
         <div id="combined-tags">
             <img id="name-tag" src="images/name-tag.png" onmouseover="nameLarge()" onmouseout="nameRegular()">
             <img id="name-tag2" src="images/name-tag2.png" onmouseover="nameLarge()" onmouseout="nameRegular()">
@@ -52,29 +54,29 @@
 
 <section class="second-section">
     <article class="content-holder">
-        <div class="red-line"></div><!--close tag here so the division is not a child-->
+        <div class="red-line"></div>
         <div class="blue-lines">
-            <header>
+            <header><!-- html5 semantic tag -->
                 <h2 class="blue-header my-bio">My Bio</h2>
             </header>
             <div id="logo-container">
-                <img class="logo rotateImg" src="images/pisces.png">
-                <img class="logo rotateImg" src="https://media3.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif">
-                <img class="logo rotateImg" src="images/youTube.png">
-                <img class="logo rotateImg" src="images/reddit.png">
-                <img class="logo rotateImg" src="images/mason.png">
-                <img class="logo rotateImg" src="images/disney.png">
+                <img class="logo rotateImg" id="item1" src="images/pisces.png">
+                <img class="logo rotateImg" id="item2" src="images/github.png">
+                <img class="logo rotateImg" id="item3" src="images/youTube.png">
+                <img class="logo rotateImg" id="item4" src="images/reddit.png">
+                <img class="logo rotateImg" id="item5" src="images/mason.png">
+                <img class="logo rotateImg" id="item6" src="images/disney.png">
             </div>
         </div>
     </article>
 </section>
 
 <section class="third-section">
-    <article class="content-holder">
+    <article class="content-holder" id="study-section">
         <div class="red-line"></div>
         <div class="blue-lines">
             <header>
-                <hgroup>
+                <hgroup><!-- html5 semantic tag -->
                     <h2 class="study">Study</h2>
                     <h3 class="study">Learning Programs</h3>
                 </hgroup>
@@ -94,20 +96,24 @@
                         <li><b><a href="https://www.duolingo.com/">Duolingo </a></b>- 130 Spanish crowns</li>
                     </ul>
                 </div>
+                <hr>
+                <aside id="study-aside"><!-- html5 semantic tag -->
+                    <p>I am a developer who loves to learn! In my free time I like to watch tutorials on YouTube, explore open source projects on GitHub, and read articles on Reddit. Exploring, and experimenting with, new technologies is something that I really enjoy doing.</p>
+                </aside>
         </div>
     </article>
 </section>
 
 <section id="fourth-section">
-    <article class="content-holder">
+    <article class="content-holder" id="fourth-holder">
         <div class="red-line"></div>
         <div class="blue-lines">
             <header>
                 <h2 class="blue-header youtube-text">YouTube</h2>
             </header>
             <section id="skin">
-                <video id="myMovie" width="640" height="360">
-                    <source src="videos/vine.mp4">
+                <video id="myMovie" width="640" height="360"><!-- html5 semantic tag -->
+                    <source src="videos/vine.mp4"><!-- html5 semantic tag -->
                 </video>
                 <nav id="movieNav">
                     <div id="buttons">
@@ -127,8 +133,8 @@
 </div>
 </section>
 
-<footer class="bottom-footer">
-    <p>Created July 2019 by Tyler Biggert || <a title="Send me an email" href="mailto:tbiggert@student.valencia.com" target="_blank">Send me an email</a><p>
+<footer class="bottom-footer"><!-- html5 semantic tag -->
+    <p>Created by Tyler Biggert || <a title="Send me an email" href="mailto:tbiggert@student.valencia.com" target="_blank">Send me an email</a><p>
 </footer>
 
 </div>
